@@ -5,6 +5,7 @@ library(dplyr)
 library(tidyverse)
 library(colorspace)
 library(readxl)
+library(svglite)
 
 library(showtext)
 font_add_google(name = "Montserrat", family = "Montserrat")
@@ -218,3 +219,9 @@ ggplot(df_project, aes(Estimat, rank)) +
   annotate("text", x = 0.90, y = -1, label = "Less health care usage\n than Norwegians", family = "Montserrat", size = 3, color = "grey20") +
   annotate("segment",  x = 0.95, y = -2.5, xend = 0.86, yend = -2.5, arrow = arrow(type = "closed", length = unit(0.005, "npc"))) +
   annotate("segment",  x = 1.05, y = -2.5, xend = 1.14, yend = -2.5, arrow = arrow(type = "closed", length = unit(0.005, "npc")))
+
+ggsave("categories.svg",width=15, height=15)
+
+
+#ggsave("categories.pdf",width=15, height=15)
+#ggsave("categories.png", width = 15, height = 15)
